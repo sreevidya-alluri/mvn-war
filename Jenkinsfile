@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'instance-sv-1'}
     stages {
 	stage('print the server ip for confirmation'){
 	 steps{  
