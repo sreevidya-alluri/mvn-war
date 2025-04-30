@@ -1,0 +1,36 @@
+---
+- name: Make a webpage using maven 
+  hosts: webservers
+  become: yes
+  tasks:
+  - name: change the centos file for installing packages - comment out mirrolist
+    ansible.builtin.lineinfile:
+      path: /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo 
+      regexp: '^#mirrorlist=http://mirrorlist.centos.org?arch=$basearch&release=7&repo=sclo-rh'
+      insertbefore: 'mirrorlist=http://mirrorlist.centos.org?arch=$basearch&release=7&repo=sclo-rh'
+      line: '#mirrorlist=http://mirrorlist.centos.org?arch=$basearch&release=7&repo=sclo-rh' 
+  - name: remove/comment  the line 
+    ansible.builtin.lineinfile:
+      path: /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo
+      regexp: '^#baseurl=http://vault.centos.org/7.9.2009/sclo/$basearch/rh/' 
+      insertbefore: 'gpgcheck=1' 
+      line: 'baseurl=http://mirror.centos.org/centos/7/sclo/$basearch/rh/'
+  - name: add the baseurl line 
+    ansible.builtin.lineinfile:
+      path: /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo
+      line: baseurl=http://vault.centos.org/7.9.2009/sclo/$basearch/rh/
+      create: yes 
+      
+  - name: Install maven and git 
+    yum:
+      name:  maven
+      state: present
+  - name: Install git 
+    yum:
+      name: git
+      state: installed 
+  - name: clone the repo 
+    ansible.builtin.git: 
+      repo : 'https://github.com/AndriyKalashnykov/tomcat-root-war' 
+      dest: /home/sree-vidya/tomcat-war
+
