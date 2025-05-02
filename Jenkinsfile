@@ -8,7 +8,7 @@ pipeline {
         }
         stage('maven clean install') {
             steps {
-                dir("/home/jenkins/agent/workspace/mvn-war-sree-vidya") {
+                dir("/home/sree-vidya/tomcat-root-war/") {
                     sh "mvn clean install"
                 }
             }
