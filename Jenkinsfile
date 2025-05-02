@@ -15,7 +15,7 @@ pipeline {
         }
         stage('copy to the path') {
             steps {
-                sh "cp /home/sree-vidya/tomcat-war/target/ROOT.war /opt/tomcat/webapps/ROOT.war"
+                sh "cp /home/sree-vidya/tomcat-root-war/target/ROOT.war /opt/tomcat/webapps/ROOT.war"
             }
         }
     }
