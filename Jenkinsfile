@@ -20,7 +20,8 @@ pipeline {
 	   steps{ 
 		sh '''
 		sudo chown -R sree-vidya:sree-vidya /home/sree-vidya/tomcat-war 
-                sudo chmod 700 /home/sree-vidya/tomcat-war
+                sudo chmod 700 /home/sree-vidya/tomcat-war 
+                id
 		'''
 	}
 	}
