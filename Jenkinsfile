@@ -18,7 +18,7 @@ pipeline {
 
         stage('Maven Clean Install') {
             steps {
-                dir('/home/sree-vidya/tomcat-root-war/') {
+                dir('/home/sree-vidya/tomcat-war/') {
                     sh 'mvn clean install'
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 sh '''
                     sudo systemctl stop tomcat
-                    cp /home/sree-vidya/tomcat-root-war/target/ROOT.war /opt/tomcat/webapps/ROOT.war
+                    cp /home/sree-vidya/tomcat-war/target/ROOT.war /opt/tomcat-war/webapps/ROOT.war
                     sudo systemctl start tomcat
                 '''
             }
