@@ -25,13 +25,7 @@ pipeline {
 		'''
 	}
 	}
-        stage('Maven Clean Install') {
-            steps {
-                dir('/home/sree-vidya/tomcat-war/') {
-                    sh 'mvn clean install'
-                }
-            }
-        }
+        
 
         stage('Copy WAR and Restart Tomcat') {
             steps {
