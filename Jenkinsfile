@@ -20,7 +20,7 @@
       steps{
        
          sh '''  
-          cd tomcat-root-war
+         cd mvn-war-sree-vidya
            
            mvn clean install  
          
