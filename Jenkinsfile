@@ -33,7 +33,7 @@
        
          sh '''  
            
-           ansible-playbook -i /var/lib/jenkins/inventory.ini /var/lib/jenkins/playbook.yaml
+           ansible-playbook -i /var/lib/jenkins/inventory.ini /var/lib/jenkins/playbook.yml
          
           '''
          }
