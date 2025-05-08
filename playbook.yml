@@ -21,16 +21,7 @@
       line: baseurl=http://vault.centos.org/7.9.2009/sclo/$basearch/rh/
       create: yes 
       
-  - name: Install maven and git 
-    yum:
-      name:  maven
-      state: present
-  - name: Install git 
-    yum:
-      name: git
-      state: installed 
-  - name: clone the repo 
-    ansible.builtin.git: 
-      repo : 'https://github.com/AndriyKalashnykov/tomcat-root-war' 
-      dest: /home/sree-vidya/tomcat-war
-
+  - name: copying path 
+    copy: 
+        src: ./target/ROOT.war 
+        dest: /home/sree-vidya/opt/tomcat/webapps/ROOT.war
