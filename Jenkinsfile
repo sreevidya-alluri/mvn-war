@@ -33,7 +33,7 @@
        
          sh '''  
            
-           ansible-playbook -i inventory.ini playbook.yaml
+           ansible-playbook -i /home/sree-vidya/mvn-war/inventory.ini /home/sree-vidya/mvn-war/playbook.yaml
          
           '''
          }
