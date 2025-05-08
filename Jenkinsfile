@@ -26,6 +26,18 @@
           '''
          }
       
+    } 
+
+    stage('run the playbook'){
+      steps{
+       
+         sh '''  
+           
+           ansible-playbook -i inventory.ini playbook.yaml
+         
+          '''
+         }
+      
     }
     
    
