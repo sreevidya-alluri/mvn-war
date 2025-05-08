@@ -20,7 +20,6 @@
       steps{
        
          sh '''  
-         cd mvn-war-sree-vidya
            
            mvn clean install  
          
