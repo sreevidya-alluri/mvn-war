@@ -7,6 +7,15 @@
                 sh 'hostname -I'
             }
         }
+        stage {
+                stage('clone repo'){
+            steps {
+                git url: 'https://github.com/AndriyKalashnykov/tomcat-root-war'
+              }
+    	}
+
+            
+                 
             
      stage('Do mvn clean install'){
       steps{
