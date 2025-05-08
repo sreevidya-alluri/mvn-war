@@ -11,12 +11,12 @@ pipeline {
        
      stage('Do mvn clean install'){
       steps{
-       dir('/home/sree-vidya/tomcat-war'){  
+       {  
          sh '''
            mvn clean install 
           '''
          }
-      }
+      
     }
     
     stage('Run the playbook'){
