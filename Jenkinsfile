@@ -8,7 +8,13 @@ pipeline {
             }
         }
       
-       
+      stage('Run the playbook'){
+     steps{   
+     sh ''' ansible-playbook -i inventory.ini playbook.yml
+'''
+}
+}
+        
      stage('Do mvn clean install'){
       steps{
        
@@ -21,12 +27,7 @@ pipeline {
       
     }
     
-    stage('Run the playbook'){
-     steps{   
-     sh ''' ansible-playbook -i inventory.ini playbook.yml
-'''
-}
-}
+   
  }
 
 }
