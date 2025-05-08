@@ -11,8 +11,8 @@ pipeline {
        
      stage('Do mvn clean install'){
       steps{
-       {  
-         sh '''
+       
+         sh ''' 
            mvn clean install 
           '''
          }
