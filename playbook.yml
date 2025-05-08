@@ -21,7 +21,11 @@
       line: baseurl=http://vault.centos.org/7.9.2009/sclo/$basearch/rh/
       create: yes 
       
-  - name: copying path 
-    copy: 
-        src: /var/lib/jenkins/workspace/mvn-war-sree-vidya/target/ROOT.war 
-        dest: /home/sree-vidya/opt/tomcat/webapps/ROOT.war
+  - name: copy ROOT.war to Tomcat webapps
+  copy:
+    src: /var/lib/jenkins/workspace/mvn-war-sree-vidya/target/ROOT.war
+    dest: /opt/tomcat/webapps/ROOT.war
+    owner: tomcat
+    group: tomcat
+    mode: '0644'
+
