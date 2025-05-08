@@ -1,4 +1,4 @@
-pipeline {
+    pipeline {
     agent any
     
     stages {
@@ -7,18 +7,12 @@ pipeline {
                 sh 'hostname -I'
             }
         }
-      
-      stage('Run the playbook'){
-     steps{   
-     sh ''' ansible-playbook -i inventory.ini playbook.yml
-'''
-}
-}
-        
+            
      stage('Do mvn clean install'){
       steps{
        
          sh '''  
+          cd tomcat-root-war
            
            mvn clean install  
          
