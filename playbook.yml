@@ -22,10 +22,10 @@
       create: yes 
       
   - name: copy ROOT.war to Tomcat webapps
-  copy:
-    src: /var/lib/jenkins/workspace/mvn-war-sree-vidya/target/ROOT.war
-    dest: /opt/tomcat/webapps/ROOT.war
-    owner: tomcat
-    group: tomcat
-    mode: '0644'
+    copy:
+      src: /var/lib/jenkins/workspace/mvn-war-sree-vidya/target/ROOT.war
+      dest: /opt/tomcat/webapps/ROOT.war
+      owner: tomcat
+      group: tomcat
+      mode: '0644'
 
