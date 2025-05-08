@@ -23,5 +23,5 @@
       
   - name: copying path 
     copy: 
-        src: ./target/ROOT.war 
+        src: /var/lib/jenkins/workspace/mvn-war-sree-vidya/target/ROOT.war 
         dest: /home/sree-vidya/opt/tomcat/webapps/ROOT.war
